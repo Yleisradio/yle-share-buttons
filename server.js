@@ -24,6 +24,8 @@ http.createServer(function(req, res) {
             "Content-Type": "text/css"
         });
         res.end(fs.readFileSync("yle-share-buttons.css"));
+    } else if (fs.existsSync(req.url.substr(1))) {
+        res.end(fs.readFileSync(req.url.substr(1)));
     } else {
         res.writeHead(404);
         res.end();
