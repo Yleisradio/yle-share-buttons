@@ -12,7 +12,7 @@ mkdir "test-reports"
 echo "" 
 echo "Setting up application server" 
 echo "-------------------------------------------------------------------"
-NODE_ENV=ci nohup node dist/app.js &SERVER_PID=$!
+NODE_ENV=ci nohup node dist/server.js &SERVER_PID=$!
 
 echo ""
 echo "Starting Protractor tests"
