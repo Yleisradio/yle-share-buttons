@@ -1,0 +1,40 @@
+#! /usr/bin/env bash
+
+DIR=`pwd -P`
+
+abort_if_error() {
+  if [ "${1}" -ne "0" ]; then
+    echo "BUILD FAILED WITH EXIT CODE ${1} : ${2}"
+    exit ${1}
+  fi
+}
+
+mkdir -p "$DIR/test-reports"
+mkdir -p "$DIR/logs"
+mkdir -p "$DIR/pids"
+mkdir -p "$DIR/build"
+mkdir -p "$DIR/node_temp"
+
+echo "Setup: "
+echo "Node version:"
+node -v
+
+echo "Install node depencies"
+mkdir -p "$DIR/node_temp"
+
+git config --global url."https://".insteadOf git://
+git config url."https://".insteadOf git://
+git config -l
+
+npm config delete proxy 
+npm config delete https-proxy 
+npm config set tmp "$DIR/node_temp"
+# npm config set python /usr/bin/python2.6
+
+npm set strict-ssl false
+npm config list
+npm cache clean
+
+npm install --unsafe-perm || abort_if_error 1 "NPM failed"
+grunt build || abort_if_error 1 "Grunt failed"
+echo "Done."

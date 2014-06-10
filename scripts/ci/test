@@ -1,0 +1,29 @@
+#! /usr/bin/env bash
+
+DIR=`pwd -P`
+
+echo "Test: "
+echo "CURRENT DIR: $DIR"
+
+echo "Run test"
+
+mkdir "test-reports"
+
+echo "" 
+echo "Setting up application server" 
+echo "-------------------------------------------------------------------"
+NODE_ENV=ci nohup node dist/app.js &SERVER_PID=$!
+
+echo ""
+echo "Starting Protractor tests"
+echo "-------------------------------------------------------------------"
+
+$DIR/node_modules/protractor/bin/protractor $DIR/config/protractor.js $*
+
+echo ""
+echo "Shutting down application server"
+echo "-------------------------------------------------------------------"
+kill $SERVER_PID
+
+echo "Done."
+echo ""

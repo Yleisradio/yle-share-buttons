@@ -1,0 +1,12 @@
+#! /usr/bin/env bash
+
+DIR=`pwd -P`
+
+echo "Tear Down: "
+
+rm -rfv "$DIR/logs"
+rm -rfv "$DIR/pids"
+rm -rfv "$DIR/build"
+
+echo "Done."
+echo ""
