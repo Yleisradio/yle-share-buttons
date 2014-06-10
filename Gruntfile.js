@@ -16,7 +16,7 @@ module.exports = function(grunt) {
         cssmin: {
             build: {
                 files: {
-                    'dist/<%= pkg.name %>.css': ['build/*']
+                    'dist/<%= pkg.name %>.css': ['dist/<%= pkg.name %>.css']
                 }
             }
         },
@@ -28,7 +28,7 @@ module.exports = function(grunt) {
         imageEmbed: {
             build: {
                 src: ["<%= pkg.name %>.css"],
-                dest: "build/yle-share-buttons.css",
+                dest: "dist/<%= pkg.name %>.css",
                 options: {
                     deleteAfterEncoding: false
                 }
