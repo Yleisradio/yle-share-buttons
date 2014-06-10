@@ -36,5 +36,5 @@ npm config list
 npm cache clean
 
 npm install --unsafe-perm || abort_if_error 1 "NPM failed"
-grunt || abort_if_error 1 "Grunt failed"
+grunt build || abort_if_error 1 "Grunt failed"
 echo "Done."
