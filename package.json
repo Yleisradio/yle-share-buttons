@@ -1,0 +1,30 @@
+{
+    "name": "yle-share-buttons",
+    "version": "0.0.0",
+    "description": "Faster and more secure share buttons",
+    "main": "index.js",
+    "scripts": {
+        "start": "dist/server.js",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "ssh://git@tools.yle.fi:443/glob/yle-share-buttons.git"
+    },
+    "author": "Jaakko Ojalehto",
+    "dependencies": {},
+    "devDependencies": {
+        "grunt": "~0.4.5",
+        "grunt-develop": "~0.2.2",
+        "grunt-contrib-watch": "~0.5.3",
+        "grunt-contrib-compass": "~0.6.0",
+        "time-grunt": "~0.1.1",
+        "load-grunt-tasks": "~0.2.0",
+        "grunt-contrib-jshint": "~0.10.0",
+        "grunt-contrib-uglify": "~0.4.0",
+        "grunt-contrib-cssmin": "~0.9",
+        "grunt-contrib-clean": "~0.5",
+        "grunt-contrib-copy": "~0.5",
+        "grunt-image-embed": "~0.3"
+    }
+}

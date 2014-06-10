@@ -1,0 +1,41 @@
+#yle-share-buttons a, #yle-share-buttons-share-count {
+    float: left;
+}
+#yle-share-buttons-clearfix {
+    clear: both;
+}
+#yle-share-buttons .yle-share-buttons-button-wrapper {
+    float: left;
+    text-align: center;
+    margin-left: 5px;
+}
+.yle-share-buttons-share-count {
+    height: 20px;
+    font-size: 14px;
+    line-height: 20px;
+}
+#yle-share-buttons-facebook {
+    background-image: url('img/facebook.png');
+}
+#yle-share-buttons-googleplus {
+    background-image: url('img/googleplus.png');
+}
+#yle-share-buttons-linkedin {
+    background-image: url('img/linkedin.png');
+}
+#yle-share-buttons-pinterest {
+    background-image: url('img/pinterest.png');
+}
+#yle-share-buttons-twitter {
+    background-image: url('img/twitter.png');
+}
+#yle-share-buttons a {
+    background-position: center center;
+    background-repeat: no-repeat;
+    float: left;
+    height: 32px;
+    overflow: hidden;
+    text-indent: 100%;
+    white-space: nowrap;
+    width: 32px;
+}
