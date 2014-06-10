@@ -1,12 +1,27 @@
 module.exports = function(grunt) {
-    // show elapsed time at the end
-    require('time-grunt')(grunt);
     // load all grunt tasks
     require('load-grunt-tasks')(grunt);
 
     // Project configuration.
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
+        watch: {
+            livereload: {
+                files: [
+                    '*.js',
+                    '*.html'
+                ],
+                options: {
+                    nospawn: true,
+                    livereload: 35729
+                }
+            }
+        },
+        develop: {
+            server: {
+                file: 'server.js'
+            }
+        },
         uglify: {
             build: {
                 src: '<%= pkg.name %>.js',
@@ -54,8 +69,12 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks("grunt-image-embed");
     grunt.loadNpmTasks('grunt-contrib-copy');
+    grunt.loadNpmTasks('grunt-contrib-watch');
 
     // Default task(s).
-    grunt.registerTask('default', ['clean', 'uglify', 'imageEmbed', 'cssmin', 'copy']);
+    grunt.registerTask('default', ['develop', 'watch']);
+    
+
+    grunt.registerTask('build', ['clean', 'uglify', 'imageEmbed', 'cssmin', 'copy']);
 
 };
