@@ -65,7 +65,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-watch');
 
     // Default task(s).
-    grunt.registerTask('default', ['develop', 'watch']);
+    grunt.registerTask('default', ['build', 'develop', 'watch']);
     
 
     grunt.registerTask('build', ['uglify', 'imageEmbed', 'cssmin', 'copy']);
