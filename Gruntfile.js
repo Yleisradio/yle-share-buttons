@@ -8,9 +8,10 @@ module.exports = function(grunt) {
         watch: {
             livereload: {
                 files: [
-                    '*.js',
-                    '*.html'
+                    'src/*.js',
+                    'src/*.html'
                 ],
+                tasks: ['build'],
                 options: {
                     nospawn: true,
                     livereload: 35729
@@ -24,26 +25,21 @@ module.exports = function(grunt) {
         },
         uglify: {
             build: {
-                src: '<%= pkg.name %>.js',
-                dest: 'dist/<%= pkg.name %>.js'
+                src: 'src/<%= pkg.name %>.js',
+                dest: '<%= pkg.name %>.js'
             }
         },
         cssmin: {
             build: {
                 files: {
-                    'dist/<%= pkg.name %>.css': ['dist/<%= pkg.name %>.css']
+                    '<%= pkg.name %>.css': ['<%= pkg.name %>.css']
                 }
-            }
-        },
-        clean: {
-            build: {
-                src: ['dist', 'build']
             }
         },
         imageEmbed: {
             build: {
-                src: ["<%= pkg.name %>.css"],
-                dest: "dist/<%= pkg.name %>.css",
+                src: ["src/<%= pkg.name %>.css"],
+                dest: "<%= pkg.name %>.css",
                 options: {
                     deleteAfterEncoding: false
                 }
@@ -51,14 +47,11 @@ module.exports = function(grunt) {
         },
         copy: {
             build: {
-                cwd: './',
+                cwd: 'src',
                 src: [
-                    'server.js',
-                    'package.json',
-                    'VERSION',
                     'index.html'
                 ],
-                dest: 'dist',
+                dest: '',
                 expand: true
             },
         },
@@ -75,6 +68,6 @@ module.exports = function(grunt) {
     grunt.registerTask('default', ['develop', 'watch']);
     
 
-    grunt.registerTask('build', ['clean', 'uglify', 'imageEmbed', 'cssmin', 'copy']);
+    grunt.registerTask('build', ['uglify', 'imageEmbed', 'cssmin', 'copy']);
 
 };
