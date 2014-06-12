@@ -15,19 +15,19 @@
     line-height: 20px;
 }
 #yle-share-buttons-facebook {
-    background-image: url('img/facebook.png');
+    background-image: url('../img/facebook.png');
 }
 #yle-share-buttons-googleplus {
-    background-image: url('img/googleplus.png');
+    background-image: url('../img/googleplus.png');
 }
 #yle-share-buttons-linkedin {
-    background-image: url('img/linkedin.png');
+    background-image: url('../img/linkedin.png');
 }
 #yle-share-buttons-pinterest {
-    background-image: url('img/pinterest.png');
+    background-image: url('../img/pinterest.png');
 }
 #yle-share-buttons-twitter {
-    background-image: url('img/twitter.png');
+    background-image: url('../img/twitter.png');
 }
 #yle-share-buttons a {
     background-position: center center;
